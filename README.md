@@ -1,1 +1,1 @@
-## day 1 of github 
+## day 2 of github 
