@@ -1,0 +1,57 @@
+SELECT * FROM college.walmartdata;
+SELECT * 
+FROM college.walmartdata
+WHERE branch = 'a';
+SELECT * 
+FROM college.walmartdata
+WHERE branch = 'B';
+SELECT * 
+FROM college.walmartdata
+WHERE branch = 'c';
+select Product _ line, format(sum(unit _price * quantity ), 'N2') as Total _ Sales from walmartdata group by product _ line order by Total _ sales desc
+SELECT *
+FROM college.Walmartdata
+WHERE payment= 'Cash';
+SELECT city, SUM(gross_income) AS total_gross_income
+FROM college.Walmartdata
+GROUP BY city;
+SELECT branch, AVG(rating) AS average_rating
+FROM college.Walmartdata
+GROUP BY branch;
+
+SELECT product_line, SUM(quantity) AS total_quantity
+FROM   college.Walmartdata
+GROUP BY product_line;
+SELECT product_line, unit_price
+FROM college.walmartdata
+ORDER BY unit_price DESC
+LIMIT 5;
+SELECT *
+FROM  college.walmartdata
+WHERE gross_income > 30;
+SELECT *
+FROM sales
+WHERE DATEPART(WEEKDAY, traction_date) IN (1, 7);
+SELECT 
+    YEAR(date) AS year,
+    MONTH(date) AS month,
+    SUM(cogs) AS total_sales,
+    SUM(gross_income) AS total_gross_income
+FROM sales
+GROUP BY YEAR(Date), MONTH(Date)
+ORDER BY year, month;
+SELECT COUNT(*)
+FROM college.walmartdata
+WHERE HOUR(time) >= 18;
+
+
+SELECT *
+FROM college.walmartdata
+WHERE cogs > (SELECT AVG(cogs) FROM college.walmartdata);
+
+SELECT
+    branch,
+    date,
+    SUM(gross_income) OVER (PARTITION BY branch ORDER BY date) AS cumulative_gross_income
+FROM college.walmartdata
+ORDER BY branch, date;
