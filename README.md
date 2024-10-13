@@ -19,4 +19,4 @@ Dataset:
 • cogs: Cost of goods sold.
 • gross_margin_percentage: Gross margin percentage.
 • gross_income: Gross income from the sale.
-• Rating: Customer rating for the purchase
+• Rating: Customer rating for the purchase..
